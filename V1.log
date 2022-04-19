@@ -1,0 +1,38 @@
+==61715== Memcheck, a memory error detector
+==61715== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==61715== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==61715== Command: ./ran
+==61715== Parent PID: 61691
+==61715== 
+==61715== Conditional jump or move depends on uninitialised value(s)
+==61715==    at 0x10B305: CheckIfOpenSuitExists (rounds.c:472)
+==61715==    by 0x10B21E: IsCardValid (rounds.c:422)
+==61715==    by 0x109CEE: GiveCard (players.c:102)
+==61715==    by 0x10AE8F: Trick (rounds.c:328)
+==61715==    by 0x10A4FF: RunRound (rounds.c:123)
+==61715==    by 0x1098E5: PlayGame (game.c:117)
+==61715==    by 0x109B03: main (main.c:23)
+==61715== 
+==61715== Invalid read of size 4
+==61715==    at 0x1099FA: GameDestroy (game.c:155)
+==61715==    by 0x109B0F: main (main.c:24)
+==61715==  Address 0x4a52068 is 40 bytes inside a block of size 48 free'd
+==61715==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==61715==    by 0x109A86: GameDestroy (game.c:170)
+==61715==    by 0x109957: PlayGame (game.c:124)
+==61715==    by 0x109B03: main (main.c:23)
+==61715==  Block was alloc'd at
+==61715==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==61715==    by 0x1095B4: GameCreate (game.c:34)
+==61715==    by 0x109AF3: main (main.c:22)
+==61715== 
+==61715== 
+==61715== HEAP SUMMARY:
+==61715==     in use at exit: 0 bytes in 0 blocks
+==61715==   total heap usage: 5,704 allocs, 5,704 frees, 607,408 bytes allocated
+==61715== 
+==61715== All heap blocks were freed -- no leaks are possible
+==61715== 
+==61715== Use --track-origins=yes to see where uninitialised values come from
+==61715== For lists of detected and suppressed errors, rerun with: -s
+==61715== ERROR SUMMARY: 5987 errors from 2 contexts (suppressed: 0 from 0)
