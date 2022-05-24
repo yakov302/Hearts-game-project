@@ -1,9 +1,13 @@
 #ifndef __VECTOR_H__
 #define __VECTOR_H__
+
 #include <stdio.h>
+#include <stdlib.h>
+
 #include "enum.h"
 
-/*new name to the structure type*/
+#define MAGIC_NUMBER 8123475
+
 typedef struct Vector Vector;
 
 /*VectorCreate function description:
@@ -122,36 +126,5 @@ ERR_OK: If _item variable inserts into the member in the _index place successful
 ADTErr VectorSet(Vector* _vector, size_t _index, int _item);
 
 
-
-
-
-
-#endif /*#ifndef__VECTOR_H__*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#endif //__VECTOR_H__
 

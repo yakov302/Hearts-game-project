@@ -1,10 +1,7 @@
 #ifndef __CARDS_H__
 #define __CARDS_H__
 
-/*rename to enum Suit*/
 typedef enum Suit {CLUBS, DIAMOND, HEART, SPADE, NUM_OF_SUITS}Suit;
-
-/*rename to enum CardNumber*/
 typedef enum CardNumber {TWO, THREE, FOUR ,FIVE ,SIX ,SEVEN ,EIGHT ,NINE ,TEN ,PRINCE ,QUEEN ,KING ,ACE, NUM_OF_RANK}CardNumber; 
 
 #define NUM_OF_CARDS_IN_DECK NUM_OF_SUITS*NUM_OF_RANK
@@ -33,4 +30,5 @@ Output:
 n - Card number (according to the numbering of the cards deck. A equals 14)*/
 CardNumber ConvertFromNumberToCardNumber (int _num, int _suit);
 
-#endif /*#ifndef__CARDS_H__*/
+
+#endif // __CARDS_H__

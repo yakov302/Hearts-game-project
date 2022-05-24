@@ -1,10 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "vector.h"
-#include "enum.h"
-#define MAGIC_NUMBER 8123475
-
-/***struct Vector***/
 
 struct Vector
 {
@@ -15,8 +9,6 @@ size_t m_nItems;
 size_t m_blockSize;
 int m_magicNumber;
 };
-
-/**************************VectorCreate***************************/
 
 Vector *VectorCreate (size_t _initialSize, size_t _extensionBlockSize)
 {
@@ -49,8 +41,6 @@ Vector *VectorCreate (size_t _initialSize, size_t _extensionBlockSize)
 	return ptr;
 }
 
-/************VectorDestroy***********/
-
 void VectorDestroy (Vector* _vector)
 {
 	if(_vector == NULL || _vector -> m_magicNumber != MAGIC_NUMBER)
@@ -62,8 +52,6 @@ void VectorDestroy (Vector* _vector)
 	free (_vector -> m_items);
 	free(_vector);
 }
-
-/****************VectorAdd********************/
 
 ADTErr VectorAdd (Vector* _vector, int _item)
 {
@@ -97,8 +85,6 @@ int *temp;
 
 }
 
-/******************VectorDelete*******************/
-
 ADTErr VectorDelete(Vector* _vector, int* _item)
 {
 
@@ -127,9 +113,7 @@ int *temp;
 		_vector -> m_nItems--;
 		return ERR_OK;
 }
- 
-/***********VectorPrint***********/ 
- 
+  
 void VectorPrint(Vector* _vector)
 {
 int index;
@@ -145,8 +129,6 @@ int index;
 	}
 }
 
-/***********************VectorItemsNum************************/
-
 ADTErr VectorItemsNum (Vector* _vector, size_t* _numOfltems)
 {
 	if(_vector == NULL || _numOfltems == NULL)
@@ -157,8 +139,6 @@ ADTErr VectorItemsNum (Vector* _vector, size_t* _numOfltems)
 	*_numOfltems = _vector -> m_nItems;
 	return ERR_OK;
 }
-
-/************************VectorGet**************************/
 
 ADTErr VectorGet(Vector* _vector, size_t _index, int* _item)
 {
@@ -175,8 +155,6 @@ ADTErr VectorGet(Vector* _vector, size_t _index, int* _item)
 	return ERR_OK;
 } 
 
-/************************VectorSet**************************/
-
 ADTErr VectorSet(Vector* _vector, size_t _index, int _item)
 {
 	if(_vector == NULL)
@@ -192,11 +170,7 @@ ADTErr VectorSet(Vector* _vector, size_t _index, int _item)
 	return ERR_OK;
 } 
 
-
-
-
 /************testFunction**************/
-
 
 int Getm_originalSize (Vector* _vector)
 {
@@ -222,17 +196,4 @@ int getn(Vector*_vector,  int i)
 {
 	return _vector -> m_items[i];
 }
-
-
-
-
-
-
-
-
-
-
-
- 
-
 

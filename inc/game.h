@@ -1,11 +1,15 @@
 #ifndef __GAME_H__
 #define __GAME_H__
+
+#include <stdlib.h>
+
 #include "rounds.h"
 #include "players.h"
-#include "enum.h"
-#include "userInterface.h"
 
-/*rename to struct Game*/
+#define ON 1
+#define OFF 0
+#define MAGIC_NUMBER1 67358
+
 typedef struct Game Game; 
 
 /*Description:
@@ -29,7 +33,7 @@ Input:
 Output:
 ERR_NOT_INITIALIZED - If _game == NULL.
 ERR_OK - If game is running.*/
-ADTErr PlayGame(Game * _game);
+void PlayGame(Game * _game);
 
 /*Description:
 Destroys the game.
@@ -39,4 +43,4 @@ Input:
 void GameDestroy (Game * _game);
 
 
-#endif /*#ifndef__GAME_H__*/
+#endif //__GAME_H__

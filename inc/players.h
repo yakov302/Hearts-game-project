@@ -1,9 +1,18 @@
 #ifndef __PLAYERS_H__
 #define __PLAYERS_H__
-#include "enum.h"
-#include "vector.h"
 
-/*rename to struct Game*/
+#include <stdlib.h>
+
+#include "cards.h"
+#include "enum.h"
+#include "sorting_algorithms.h"
+
+
+#define NO 0
+#define YES 1
+#define NOT_VALID -1
+#define MAGIC_NUMBER4 14325
+
 typedef struct Player Player; 
 
 /*Description:
@@ -64,7 +73,7 @@ strategy - Pointer to function that selects card based on strategy. received fro
 
 Output:
 cards - The cards the player handing.*/
-int GiveCardFor3 (Player * _player, int(*strategyFor3)(Player*,int)) ;
+int GiveCardForInitialSwap (Player * _player, int(*strategyFor3)(Player*,int)) ;
 
 /*Description:
 Checks if a card exist or not.
@@ -101,7 +110,4 @@ numOfCards - the number of cards.*/
 int HowManyCards(Player* _player);
 
 
-
-
-
-#endif /*#ifndef__PLAYERS_H__*/
+#endif //__PLAYERS_H__

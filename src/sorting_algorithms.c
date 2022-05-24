@@ -1,10 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include "SortingAlgorithms.h"
-#include "enum.h"
-
-/*********************Auxiliary functions************************/
+#include "sorting_algorithms.h"
 
 static void QuickSortRec(Vector* _vec, int _start, int _end);
 static int Partition(Vector* _vec, int _start, int _end);
@@ -17,8 +11,6 @@ static void RadixSortByDigit(Vector* _vec, int _digitIndex, int* count, int* ord
 static int checkDigit(int _digitIndex, int num);
 static void zeroArray(int* arr, int len);
 static void returnSorted(Vector* _vec, int* _arr, int _len);
-
-/*********************BubbleSort************************/
 
 ADTErr BubbleSort(Vector* _vec)
 {
@@ -65,8 +57,6 @@ int flag = 0;
         
 return ERR_OK;
 }
-
-/*********************ShakeSort************************/
 
 ADTErr ShakeSort(Vector* _vec)
 {
@@ -161,8 +151,6 @@ int flag = 0;
 return flag;
 }
 
-/*********************InsertionSort************************/
-
 ADTErr InsertionSort(Vector* _vec)
 {
 int i;
@@ -206,8 +194,6 @@ int checkIndex;
 	}
 return ERR_OK;
 }
-
-/*********************QuickSort************************/
 
 ADTErr QuickSort(Vector* _vec)
 {
@@ -288,8 +274,6 @@ int rightItem;
 return end;
 }
 
-/*********************ShellSort************************/
-
 ADTErr ShellSort(Vector* _vec)
 {
 size_t len;
@@ -351,8 +335,6 @@ int checkIndex;
 
 }
 
-/*********************SelectionSort************************/
-
 ADTErr SelectionSort(Vector* _vec)
 {
 int startIndex;
@@ -398,8 +380,6 @@ int ranIndex;
 	}
 return ERR_OK;
 }
-
-/*********************MergeSort************************/
 
 ADTErr MergeSort(Vector* _vec)
 {
@@ -495,10 +475,6 @@ int rightItem;
 	}
 }
 
-
-
-/*********************CountingSort************************/
-
 ADTErr CountingSort(Vector* _vec, int _maxValue)
 {
 int i;
@@ -555,9 +531,6 @@ size_t len;
 return ERR_OK;
 }
 
-
-/*********************RadixSort************************/
-
 ADTErr RadixSort(Vector* _vec, int _digitsNum)
 {
 int i;
@@ -597,7 +570,6 @@ size_t len;
 	
 return ERR_OK;
 }
-
 
 static void RadixSortByDigit(Vector* _vec, int _digitIndex, int* count, int* orderly)
 {
@@ -672,8 +644,6 @@ int i;
 	}
 }
 
-/*********************Auxiliary functions************************/
-
 static void swap (Vector* _vec, int i, int j)
 {
 int iIten;
@@ -684,16 +654,4 @@ int jItem;
 	VectorSet(_vec,i, jItem);
 	VectorSet(_vec,j, iIten);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 

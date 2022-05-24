@@ -1,6 +1,8 @@
 #ifndef __SORTINGALGORITHMS_H__
 #define __SORTINGALGORITHMS_H__
-#include "enum.h"
+
+#include <stdlib.h>
+
 #include "vector.h"
 
 /*Description: 
@@ -95,9 +97,5 @@ Output:
 	ERR_OK - If the sort done successfully.*/
 ADTErr RadixSort(Vector* _vec, int _digitsNum);
 
-#endif /*#ifndef__SORTINGALGORITHMS_H__*/
 
-
-
-
-
+#endif //__SORTINGALGORITHMS_H__

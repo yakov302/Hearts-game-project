@@ -1,9 +1,16 @@
 #ifndef __ROUNDS_H__
 #define __ROUNDS_H__
-#include "players.h"
-#include "enum.h"
 
-/*rename to struct Round*/
+#include "strategy.h"
+#include "players.h"
+#include "deck.h"
+#include "enum.h"
+#include "ui.h"
+
+#define NO 0
+#define YES 1
+#define MAGIC_NUMBER2 548889
+
 typedef struct Round Round;
 
 /*Description:
@@ -40,4 +47,4 @@ round - Pointer to round structure.*/
 ADTErr RunRound (Round * _round, int *_score, int _numOfRound);
 
 
-#endif /*#ifndef__ROUNDS_H__*/
+#endif //__ROUNDS_H__

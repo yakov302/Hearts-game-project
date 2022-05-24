@@ -1,8 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "players.h"
-#include "cards.h"
-#include "vector.h"
+#include "ui.h"
+
 #define HEART "\xE2\x99\xA5"
 #define SPADE "\xE2\x99\xA0"
 #define DIAMOND "\xE2\x99\xA6"
@@ -11,12 +8,8 @@
 #define RED "\x1B[91m"
 #define NORMAL "\x1B[0m"
 
-/***********************arrayOfNames*********************/
-
 char *name1[15] = { "Your", "Hila", "Orel", "Dana"};
 char *name2[15] = { "You ", "Hila", "Orel", "Dana"};
-
-/***********************ChooseShapeToPrint*********************/
 
 static void ChooseShapeToPrint(int _suit)
 {
@@ -37,8 +30,6 @@ static void ChooseShapeToPrint(int _suit)
 		printf(BLACK SPADE);
 	}
 }
-
-/***********************ChooseNumberToPrint*********************/
 
 static void ChooseNumberToPrint(int cardNumber)
 {
@@ -66,8 +57,6 @@ static void ChooseNumberToPrint(int cardNumber)
 	}	
 }
 
-/***********************DeclareWinner*********************/
-
 void DeclareWinner(int _winNum, int _winScore)
 {
 	printf(NORMAL);
@@ -75,15 +64,11 @@ void DeclareWinner(int _winNum, int _winScore)
 	printf("%s is the winner with only %d points.\n", name2[_winNum], _winScore);	
 }
 
-/***********************printRound*********************/
-
 void printRound(int _numOfRound)
 {
 	printf(NORMAL);
 	printf("\nRound no. %d\n", _numOfRound);
 }
-
-/***********************printPlayersHand*********************/
 
 void printPlayersHand(Player* _player, int _playerNum)
 {
@@ -114,8 +99,6 @@ int i;
 	printf("\n\n");
 }
 
-/***********************printTrick*********************/
-
 void printTrick(int _playerNum, int _card)
 {
 int cardNumber;	
@@ -131,8 +114,6 @@ int Suit;
 	ChooseNumberToPrint(cardNumber);
 	printf("\n");
 }
-
-/***********************printScore*********************/
 
 void printScore(int* _score, int _numOfPlayers)
 {
@@ -151,8 +132,6 @@ int i;
 	}
 }
 
-/***********************AskCardFromPlayer*********************/
-
 int AskCardFromPlayer(Player* _player)
 {
 int index;
@@ -160,7 +139,7 @@ int card;
 
 	if(_player == NULL)
 	{
-		return;	
+		return -1;	
 	}
 	printf(NORMAL);
 	printf("Choose card by index: ");
@@ -170,16 +149,9 @@ int card;
 return card;
 }
 
-/***********************printNotValid*********************/
-
 void printNotValid(void)
 {
 	printf(NORMAL);
 	printf("Not valid! \n");
 }
-
-
-
-
-
 

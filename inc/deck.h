@@ -1,8 +1,14 @@
 #ifndef __DECK_H__
 #define __DECK_H__
+
+#include <stdlib.h>
+#include <time.h>
+
+#include "vector.h"
 #include "cards.h"
 
-/*rename to struct Deck*/
+#define MAGIC_NUMBER3 69948
+
 typedef struct Deck Deck;
 
 /*Description:
@@ -46,4 +52,4 @@ card - The card it gives.*/
 int DeckPopCard (Deck * _deck);
 
 
-#endif /*#ifndef__DECK_H__*/
+#endif //__DECK_H__

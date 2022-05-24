@@ -1,6 +1,10 @@
 #ifndef __USERINTERFACE_H__
 #define __USERINTERFACE_H__
 
+#include <unistd.h>
+
+#include "players.h"
+
 /*Description:
 Prints that the game is over, the name of the winner and his number of points.
 
@@ -50,8 +54,10 @@ Output:
 card - the card he chooses.*/
 int AskCardFromPlayer(Player* _player);
 
+
 /*Description:
 Prints "Not valid!" when the player makes an invalid chooses.*/
 void printNotValid(void);
 
-#endif /*#ifndef__USERINTERFACE_H__*/
+
+#endif //__USERINTERFACE_H__
