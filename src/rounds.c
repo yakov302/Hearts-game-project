@@ -273,36 +273,6 @@ static int Trick(Round * _round, int _player, int* _isHeartBreke, int _isOpenTei
 
 	player = loser;		
 	return player;
-
-// int openCard;
-// int openSuit;
-// int loser;
-// int i;
-
-// 	_round ->  m_table[_player] = GiveCard (_round ->  m_players[_player], 1, _isOpenTeick, *_isHeartBreke, openSuit, openCard, IsCardValid, strategy);	
-// 	CheckIfHeartBreke(_round ->  m_table[_player], _isHeartBreke );	
-// 	openCard = _round ->  m_table[_player];	
-// 	openSuit = ConvertFromNumberToSuit (openCard);	
-// 	printTrick(_player, _round ->  m_table[_player]);	
-// 	_player = (_player+1)%(_round -> m_numOfplayers);
-	
-// 	for(i = 0; i < _round -> m_numOfplayers -1; i++)
-// 	{
-// 		_round ->  m_table[_player] = GiveCard (_round ->  m_players[_player], 0, _isOpenTeick, *_isHeartBreke, openSuit,openCard, IsCardValid, strategy);		
-// 		CheckIfHeartBreke(_round ->  m_table[_player], _isHeartBreke);
-// 		printTrick(_player, _round ->  m_table[_player]);	
-// 		_player = (_player+1)%(_round -> m_numOfplayers);
-// 	}
-	
-// 	loser = CheckLoser(_round, openSuit);
-
-// 	_round ->  m_score[loser] = _round ->  m_score[loser] + CalculateScore(_round);
-	
-// 	printScore(_round -> m_score, _round -> m_numOfplayers);
-	
-// 	_player = loser;
-		
-// return _player;
 }
 
 static int PlayHand(Round* _round, int _isOpenHend, int _player, int* _isHeartBreke, int _isOpenTeick, int  _openSuit, int _openCard)
