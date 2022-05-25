@@ -8,8 +8,6 @@
 #define RED "\x1B[91m"
 #define NORMAL "\x1B[0m"
 #define INDEX "\x1B[2m" 
-#define WITHE "\x1B[55m" 
-
 
 char* name1[15] = { "Your", "Hila", "Orel", "Dana"};
 char* name2[15] = { "You ", "Hila", "Orel", "Dana"};
