@@ -4,6 +4,7 @@
 #include <unistd.h>
 
 #include "players.h"
+#include "enum.h"
 
 /*Description:
 Prints that the game is over, the name of the winner and his number of points.
